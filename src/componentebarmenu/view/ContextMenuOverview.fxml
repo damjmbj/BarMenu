@@ -20,31 +20,31 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="componentebarmenu.view.ContextMenuController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Archivo">
             <items>
-              <MenuItem mnemonicParsing="false" text="Nuevo" />
+              <MenuItem mnemonicParsing="false" onAction="#actionAbrir" text="Abrir" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Guardar" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionGuardar" text="Guardar" />
                   <MenuItem mnemonicParsing="false" text="Guardar Como" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Salir" />
+                  <MenuItem mnemonicParsing="false" onAction="#CloseApp" text="Salir" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Editar">
             <items>
-              <MenuItem mnemonicParsing="false" text="Copiar">
+              <MenuItem fx:id="copiar" mnemonicParsing="false" onAction="#actionCopiar" text="Copiar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Pegar">
+                  <MenuItem fx:id="pegar" mnemonicParsing="false" onAction="#actionPegar" text="Pegar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Cortar">
+                  <MenuItem fx:id="cortar" mnemonicParsing="false" onAction="#actionCortar" text="Cortar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
@@ -61,12 +61,12 @@
                   </Menu>
                   <Menu mnemonicParsing="false" text="texto">
                      <items>
-                        <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
+                        <CustomMenuItem fx:id="cursiva" mnemonicParsing="false" onAction="#actionCursiva" text="cursiva">
                           <content>
                             <CheckBox text="Cursiva" />
                           </content>
                         </CustomMenuItem>
-                        <CustomMenuItem mnemonicParsing="false" text="Unspecified Action">
+                        <CustomMenuItem fx:id="negrita" mnemonicParsing="false" onAction="#actionNegrita" text="negrita">
                            <content>
                               <CheckBox text="Negrita" />
                            </content>
@@ -77,7 +77,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Buscar">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Unspecified Action">
+                  <MenuItem mnemonicParsing="false" onAction="#actionBuscar" text="Buscar Texto">
                      <graphic>
                         <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -88,22 +88,21 @@
                   </MenuItem>
                </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Texto" />
         </menus>
          <contextMenu>
             <ContextMenu>
               <items>
-                  <MenuItem mnemonicParsing="false" text="Cortar">
+                  <MenuItem fx:id="cortarContext" mnemonicParsing="false" onAction="#actionCortarContext" text="Cortar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Pegar">
+                  <MenuItem fx:id="pegarContext" mnemonicParsing="false" onAction="#actionPegarContext" text="Pegar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Copiar">
+                  <MenuItem fx:id="copiarContext" mnemonicParsing="false" onAction="#actionCopiarContext" text="Copiar">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
@@ -116,7 +115,7 @@
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TextArea prefHeight="371.0" prefWidth="600.0" />
+            <TextArea fx:id="notas" prefHeight="371.0" prefWidth="600.0" />
          </children>
       </Pane>
    </center>
