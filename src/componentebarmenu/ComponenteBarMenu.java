@@ -23,11 +23,12 @@ public class ComponenteBarMenu extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ComponenteBarMenu.class.getResource("view/ContextMenuOverview.fxml"));
         
-        
+        stage.setTitle("Ejemplo de uso MenuBar");
         BorderPane page = (BorderPane) loader.load();
         Scene scene = new Scene(page);
         stage.setScene(scene);
         stage.show();
+        
         
     }
 
