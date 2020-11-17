@@ -61,12 +61,12 @@
                   </Menu>
                   <Menu mnemonicParsing="false" text="texto">
                      <items>
-                        <CustomMenuItem fx:id="cursiva" mnemonicParsing="false" onAction="#actionCursiva" text="cursiva">
+                        <CustomMenuItem mnemonicParsing="false" text="cursiva">
                           <content>
                             <CheckBox text="Cursiva" />
                           </content>
                         </CustomMenuItem>
-                        <CustomMenuItem fx:id="negrita" mnemonicParsing="false" onAction="#actionNegrita" text="negrita">
+                        <CustomMenuItem mnemonicParsing="false" text="negrita">
                            <content>
                               <CheckBox text="Negrita" />
                            </content>
