@@ -14,7 +14,8 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author DAM-2
+ * @author Alumnos: Alejandro Escudero, Jose Manuel Becerra y Adrián Beaterio
+ * Curso: 2º DAM
  */
 public class ComponenteBarMenu extends Application {
     

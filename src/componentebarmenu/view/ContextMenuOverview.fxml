@@ -21,102 +21,109 @@
 <?import javafx.scene.layout.Pane?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="componentebarmenu.view.ContextMenuController">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="Archivo">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#actionAbrir" text="Abrir" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" onAction="#actionGuardar" text="Guardar" />
-                  <MenuItem mnemonicParsing="false" text="Guardar Como" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" onAction="#CloseApp" text="Salir" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Editar">
-            <items>
-              <MenuItem fx:id="copiar" mnemonicParsing="false" onAction="#actionCopiar" text="Copiar">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
-                  <MenuItem fx:id="pegar" mnemonicParsing="false" onAction="#actionPegar" text="Pegar">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
-                  <MenuItem fx:id="cortar" mnemonicParsing="false" onAction="#actionCortar" text="Cortar">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Convertir">
-                     <items>
-                        <RadioMenuItem mnemonicParsing="false" text="A mayuscula">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="convertir" />
-                           </toggleGroup>
-                        </RadioMenuItem>
-                        <RadioMenuItem mnemonicParsing="false" text="A minuscula" toggleGroup="$convertir" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="texto">
-                     <items>
-                        <CustomMenuItem mnemonicParsing="false" text="cursiva">
-                          <content>
-                            <CheckBox text="Cursiva" />
-                          </content>
-                        </CustomMenuItem>
-                        <CustomMenuItem mnemonicParsing="false" text="negrita">
-                           <content>
-                              <CheckBox text="Negrita" />
-                           </content>
-                        </CustomMenuItem>
-                     </items>
-                  </Menu>
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Buscar">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#actionBuscar" text="Buscar Texto">
-                     <graphic>
-                        <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../lupa.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </MenuItem>
-               </items>
-          </Menu>
-        </menus>
-         <contextMenu>
-            <ContextMenu>
-              <items>
-                  <MenuItem fx:id="cortarContext" mnemonicParsing="false" onAction="#actionCortarContext" text="Cortar">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator>
-                  </MenuItem>
-                  <MenuItem fx:id="pegarContext" mnemonicParsing="false" onAction="#actionPegarContext" text="Pegar">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator>
-                  </MenuItem>
-                  <MenuItem fx:id="copiarContext" mnemonicParsing="false" onAction="#actionCopiarContext" text="Copiar">
-                     <accelerator>
-                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator>
-                  </MenuItem>
-              </items>
-            </ContextMenu>
-         </contextMenu>
-      </MenuBar>
-   </top>
-   <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <TextArea fx:id="notas" prefHeight="371.0" prefWidth="600.0" />
-         </children>
-      </Pane>
-   </center>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Archivo">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#actionAbrir" text="Abrir" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#actionGuardar" text="Guardar" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#CloseApp" text="Salir" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Editar">
+                    <items>
+                        <MenuItem fx:id="copiar" mnemonicParsing="false" onAction="#actionCopiar" text="Copiar">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="pegar" mnemonicParsing="false" onAction="#actionPegar" text="Pegar">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="cortar" mnemonicParsing="false" onAction="#actionCortar" text="Cortar">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu mnemonicParsing="false" text="Convertir">
+                            <items>
+                                <RadioMenuItem fx:id="mayusculas" mnemonicParsing="false" onAction="#actionMayus" text="A mayuscula">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="convertir" />
+                                    </toggleGroup>
+                                </RadioMenuItem>
+                                <RadioMenuItem fx:id="minusculas" mnemonicParsing="false" onAction="#actionMinus" text="A minuscula" toggleGroup="$convertir" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="texto">
+                            <items>
+                                <CustomMenuItem mnemonicParsing="false" text="cursiva">
+                                    <content>
+                                        <CheckBox fx:id="cursiva" onAction="#actionCursiva" text="Cursiva" />
+                                    </content>
+                                </CustomMenuItem>
+                                <CustomMenuItem mnemonicParsing="false" text="negrita">
+                                    <content>
+                                        <CheckBox fx:id="negrita" onAction="#actionNegrita" text="Negrita" />
+                                    </content>
+                                </CustomMenuItem>
+                                <CustomMenuItem mnemonicParsing="false" text="normal">
+                                    <content>
+                                        <CheckBox fx:id="normal" onAction="#actionNormal" text="Normal" />
+                                    </content>
+                                </CustomMenuItem>
+                            </items>
+                        </Menu>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Ayuda">
+                    <items>
+                        <MenuItem fx:id="ayuda" mnemonicParsing="false" onAction="#actionAyuda" text="Ver la ayuda">
+                            <graphic>
+                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../interrogacion.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </Menu>
+            </menus>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                        <MenuItem fx:id="cortarContext" mnemonicParsing="false" onAction="#actionCortarContext" text="Cortar">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="pegarContext" mnemonicParsing="false" onAction="#actionPegarContext" text="Pegar">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="copiarContext" mnemonicParsing="false" onAction="#actionCopiarContext" text="Copiar">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </MenuBar>
+    </top>
+    <center>
+        <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextArea fx:id="notas" prefHeight="371.0" prefWidth="600.0" />
+            </children>
+        </Pane>
+    </center>
 </BorderPane>
